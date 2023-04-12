@@ -5,10 +5,10 @@ const data=[{task:"Learn React",done:false},
             {task:"Deploy the React app",done:false}     
 ]
 const Parent=()=>{
-    const [toDoList,setToDoList]=useState(data);
+    const [todos,setTodos]=useState(data);
 
     const TaskCompleted=(id)=>{
-        setToDoList(
+        setTodos(
             data.filter((item,index)=>{
                 if(index!=id) return item;
                 else{
@@ -25,7 +25,7 @@ const Parent=()=>{
             <h2>Child Component</h2>
             <ul>
                 {
-                    toDoList.map((list,index)=>{
+                    todos.map((list,index)=>{
                         return <Child list={list} id={index} TaskCompleted={TaskCompleted}/>
                     })
                 }
